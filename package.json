@@ -1,0 +1,38 @@
+{
+  "name": "office-monitor",
+  "version": "1.0.0",
+  "description": "Office Monitor",
+  "scripts": {
+    "dev": "npm run dev:server & npm run dev:client",
+    "dev:client": "webpack --watch",
+    "dev:server": "nodemon --debug ./javascript/server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gmb2012/office-monitor.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gmb2012/office-monitor/issues"
+  },
+  "homepage": "https://github.com/gmb2012/office-monitor#readme",
+  "devDependencies": {
+    "babel": "^5.8.35",
+    "babel-core": "^5.8.35",
+    "babel-loader": "^5.4.0",
+    "eslint": "^0.23.0",
+    "eslint-plugin-react": "2.6.4",
+    "nodemon": "^1.9.1",
+    "webpack": "^1.12.14"
+  },
+  "dependencies": {
+    "classnames": "^2.2.3",
+    "compression": "^1.6.1",
+    "express": "^4.13.4",
+    "json-loader": "^0.5.2",
+    "react": "^0.13.3",
+    "superagent": "^1.8.0-beta.2",
+    "winston": "^1.1.2"
+  }
+}

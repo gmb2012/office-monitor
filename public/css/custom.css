@@ -1,0 +1,40 @@
+.full-size {
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    right: 1em;
+    bottom: 1em;
+}
+
+.columns, .column, .status {
+    height: 100%;
+}
+
+.dnd {
+    background-color: darkred;
+}
+
+.available {
+    background-color: green;
+}
+
+.abscence-item {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.abscence-item-current {
+    font-weight: 500;
+}
+
+.status-title {
+    position: absolute;
+    left: 0.3em;
+    color: #ffffff;
+    font-size: 90px;
+    word-spacing: 999999999px;
+}
+
+.dnd .status-title {
+    bottom: 0.3em;
+}

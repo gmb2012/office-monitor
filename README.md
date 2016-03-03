@@ -1,1 +1,3 @@
-Status in memory als node service => setzt sich zurück nach 2h
+# ToDo
+Service for retrieving and sending abscences
+Make it run on the raspberry
