@@ -1,0 +1,1 @@
+Status in memory als node service => setzt sich zurück nach 2h
