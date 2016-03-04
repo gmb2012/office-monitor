@@ -4,5 +4,10 @@
     "refreshInterval": 10000,
     "textDnd": "Do Not Disturb",
     "textAvailable": "Come In"
+  },
+  "AbsenceComponent": {
+    "serviceURL": "/services/V1/status",
+    "refreshInterval": 10000,
+    "title": "Upcoming absences"
   }
 }

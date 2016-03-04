@@ -60,8 +60,13 @@
 
 	var _componentsStatusComponent2 = _interopRequireDefault(_componentsStatusComponent);
 
+	var _componentsAbsenceComponent = __webpack_require__(170);
+
+	var _componentsAbsenceComponent2 = _interopRequireDefault(_componentsAbsenceComponent);
+
 	/* global document */
 	_react2['default'].render(_react2['default'].createElement(_componentsStatusComponent2['default'], _configJson2['default'].StatusComponent), document.getElementById('StatusComponent'));
+	_react2['default'].render(_react2['default'].createElement(_componentsAbsenceComponent2['default'], _configJson2['default'].AbsenceComponent), document.getElementById('AbsenceComponent'));
 
 /***/ },
 /* 1 */
@@ -20449,6 +20454,11 @@
 			"refreshInterval": 10000,
 			"textDnd": "Do Not Disturb",
 			"textAvailable": "Come In"
+		},
+		"AbsenceComponent": {
+			"serviceURL": "/services/V1/status",
+			"refreshInterval": 10000,
+			"title": "Upcoming absences"
 		}
 	};
 
@@ -22199,6 +22209,89 @@
 	})();
 
 	exports["default"] = LogError;
+	module.exports = exports["default"];
+
+/***/ },
+/* 169 */,
+/* 170 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var AbsenceComponent = (function (_React$Component) {
+	    _inherits(AbsenceComponent, _React$Component);
+
+	    function AbsenceComponent() {
+	        _classCallCheck(this, AbsenceComponent);
+
+	        _get(Object.getPrototypeOf(AbsenceComponent.prototype), "constructor", this).apply(this, arguments);
+	    }
+
+	    _createClass(AbsenceComponent, [{
+	        key: "render",
+	        value: function render() {
+	            return _react2["default"].createElement(
+	                "div",
+	                null,
+	                _react2["default"].createElement(
+	                    "h1",
+	                    { className: "title is-1" },
+	                    this.props.title
+	                ),
+	                _react2["default"].createElement(
+	                    "p",
+	                    null,
+	                    _react2["default"].createElement(
+	                        "h2",
+	                        { className: "title is-2" },
+	                        "Björn"
+	                    ),
+	                    _react2["default"].createElement(
+	                        "p",
+	                        { className: "abscence-item abscence-item-current" },
+	                        "13.04.2016 - 15.05.2016 : Munich"
+	                    ),
+	                    _react2["default"].createElement(
+	                        "p",
+	                        { className: "abscence-item" },
+	                        "01.06.2016 - 15.06.2016 : Polen"
+	                    ),
+	                    _react2["default"].createElement(
+	                        "p",
+	                        { className: "abscence-item" },
+	                        "13.08.2016 - 31.08.2016 : Munich"
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return AbsenceComponent;
+	})(_react2["default"].Component);
+
+	AbsenceComponent.propTypes = {
+	    title: _react2["default"].PropTypes.string.isRequired
+	};
+
+	exports["default"] = AbsenceComponent;
 	module.exports = exports["default"];
 
 /***/ }
