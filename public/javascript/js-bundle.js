@@ -22256,7 +22256,7 @@
 	            var data = [{
 	                'id': 'f469aec9-3764-4917-b48f-113a82ff42f2',
 	                'name': 'Björn',
-	                'items': [{ 'id': 'f630e9b2-4408-4b50-9584-6e11cba7fed3', 'from': '06.03.2016', 'to': '15.05.2016', 'location': 'Munich' }, { 'id': 'e7a5c753-4b72-4704-94db-cba22395d0b8', 'from': '01.06.2016', 'to': '15.06.2016', 'location': 'Poznan' }, { 'id': '57622cfb-8850-4e65-a0cd-699aaf2e48c1', 'from': '13.08.2016', 'to': '31.08.2016', 'location': 'Munich' }]
+	                'items': [{ 'id': 'f630e9b2-4408-4b50-9584-6e11cba7fed3', 'from': '2016-03-06', 'to': '2016-03-22', 'location': 'Munich' }, { 'id': 'e7a5c753-4b72-4704-94db-cba22395d0b8', 'from': '2016-06-01', 'to': '2016-06-15', 'location': 'Poznan' }, { 'id': '57622cfb-8850-4e65-a0cd-699aaf2e48c1', 'from': '2016-08-13', 'to': '2016-08-31', 'location': 'Munich' }]
 	            }, { 'id': '26bb0093-218a-4b06-a117-62006139e91a', 'name': 'Flo', 'items': [] }];
 
 	            return _react2['default'].createElement(
@@ -22367,25 +22367,29 @@
 /* 171 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
+	Object.defineProperty(exports, '__esModule', {
 	    value: true
 	});
 
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(159);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
 
 	var AbsenceItemComponent = (function (_React$Component) {
 	    _inherits(AbsenceItemComponent, _React$Component);
@@ -22393,40 +22397,49 @@
 	    function AbsenceItemComponent() {
 	        _classCallCheck(this, AbsenceItemComponent);
 
-	        _get(Object.getPrototypeOf(AbsenceItemComponent.prototype), "constructor", this).apply(this, arguments);
+	        _get(Object.getPrototypeOf(AbsenceItemComponent.prototype), 'constructor', this).apply(this, arguments);
 	    }
 
 	    _createClass(AbsenceItemComponent, [{
-	        key: "render",
+	        key: 'isCurrent',
+	        value: function isCurrent(from, to) {
+	            var returnValue = false;
+
+	            if (Date.now() >= Date.parse(from) && Date.now() <= Date.parse(to)) {
+	                returnValue = true;
+	            }
+
+	            return returnValue;
+	        }
+	    }, {
+	        key: 'render',
 	        value: function render() {
-	            return _react2["default"].createElement(
-	                "p",
-	                { className: "abscence-item" },
+	            ;
+
+	            return _react2['default'].createElement(
+	                'p',
+	                { className: (0, _classnames2['default'])({ 'abscence-item': true, 'abscence-item-current': this.isCurrent(this.props.from, this.props.to) }) },
 	                this.props.from,
-	                " - ",
+	                ' - ',
 	                this.props.to,
-	                " : ",
+	                ' : ',
 	                this.props.location
 	            );
 	        }
 	    }]);
 
 	    return AbsenceItemComponent;
-	})(_react2["default"].Component);
+	})(_react2['default'].Component);
 
 	AbsenceItemComponent.propTypes = {
-	    id: _react2["default"].PropTypes.string.isRequired,
-	    from: _react2["default"].PropTypes.string.isRequired,
-	    to: _react2["default"].PropTypes.string.isRequired,
-	    location: _react2["default"].PropTypes.string.isRequired
+	    id: _react2['default'].PropTypes.string.isRequired,
+	    from: _react2['default'].PropTypes.string.isRequired,
+	    to: _react2['default'].PropTypes.string.isRequired,
+	    location: _react2['default'].PropTypes.string.isRequired
 	};
 
-	exports["default"] = AbsenceItemComponent;
-
-	/*
-	 <p className="abscence-item abscence-item-current">13.04.2016 - 15.05.2016 : Munich</p>
-	 */
-	module.exports = exports["default"];
+	exports['default'] = AbsenceItemComponent;
+	module.exports = exports['default'];
 
 /***/ }
 /******/ ]);
