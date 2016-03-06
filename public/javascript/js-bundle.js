@@ -22253,7 +22253,11 @@
 	    _createClass(AbsenceComponent, [{
 	        key: 'render',
 	        value: function render() {
-	            var data = [{ 'name': 'Björn', 'items': [] }, { 'name': 'Flo', 'items': [] }];
+	            var data = [{
+	                'id': 'f469aec9-3764-4917-b48f-113a82ff42f2',
+	                'name': 'Björn',
+	                'items': [{ 'id': 'f630e9b2-4408-4b50-9584-6e11cba7fed3', 'from': '06.03.2016', 'to': '15.05.2016', 'location': 'Munich' }, { 'id': 'e7a5c753-4b72-4704-94db-cba22395d0b8', 'from': '01.06.2016', 'to': '15.06.2016', 'location': 'Poznan' }, { 'id': '57622cfb-8850-4e65-a0cd-699aaf2e48c1', 'from': '13.08.2016', 'to': '31.08.2016', 'location': 'Munich' }]
+	            }, { 'id': '26bb0093-218a-4b06-a117-62006139e91a', 'name': 'Flo', 'items': [] }];
 
 	            return _react2['default'].createElement(
 	                'div',
@@ -22284,6 +22288,85 @@
 /* 170 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	    value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _AbsenceItemComponent = __webpack_require__(171);
+
+	var _AbsenceItemComponent2 = _interopRequireDefault(_AbsenceItemComponent);
+
+	var AbsencePersonComponent = (function (_React$Component) {
+	    _inherits(AbsencePersonComponent, _React$Component);
+
+	    function AbsencePersonComponent() {
+	        _classCallCheck(this, AbsencePersonComponent);
+
+	        _get(Object.getPrototypeOf(AbsencePersonComponent.prototype), 'constructor', this).apply(this, arguments);
+	    }
+
+	    _createClass(AbsencePersonComponent, [{
+	        key: 'render',
+	        value: function render() {
+	            var empty = '';
+	            if (this.props.items.length == 0) {
+	                empty = _react2['default'].createElement(
+	                    'p',
+	                    null,
+	                    '-'
+	                );
+	            }
+
+	            return _react2['default'].createElement(
+	                'p',
+	                { className: 'abscence-person' },
+	                _react2['default'].createElement(
+	                    'h2',
+	                    { className: 'title is-2' },
+	                    this.props.name
+	                ),
+	                this.props.items.map(function (item, index) {
+	                    return _react2['default'].createElement(_AbsenceItemComponent2['default'], _extends({}, item, { key: index }));
+	                }),
+	                empty
+	            );
+	        }
+	    }]);
+
+	    return AbsencePersonComponent;
+	})(_react2['default'].Component);
+
+	AbsencePersonComponent.propTypes = {
+	    name: _react2['default'].PropTypes.string.isRequired,
+	    id: _react2['default'].PropTypes.string.isRequired,
+	    items: _react2['default'].PropTypes.array.isRequired
+	};
+
+	exports['default'] = AbsencePersonComponent;
+	module.exports = exports['default'];
+
+/***/ },
+/* 171 */
+/***/ function(module, exports, __webpack_require__) {
+
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
@@ -22304,54 +22387,45 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var AbsencePersonComponent = (function (_React$Component) {
-	    _inherits(AbsencePersonComponent, _React$Component);
+	var AbsenceItemComponent = (function (_React$Component) {
+	    _inherits(AbsenceItemComponent, _React$Component);
 
-	    function AbsencePersonComponent() {
-	        _classCallCheck(this, AbsencePersonComponent);
+	    function AbsenceItemComponent() {
+	        _classCallCheck(this, AbsenceItemComponent);
 
-	        _get(Object.getPrototypeOf(AbsencePersonComponent.prototype), "constructor", this).apply(this, arguments);
+	        _get(Object.getPrototypeOf(AbsenceItemComponent.prototype), "constructor", this).apply(this, arguments);
 	    }
 
-	    _createClass(AbsencePersonComponent, [{
+	    _createClass(AbsenceItemComponent, [{
 	        key: "render",
 	        value: function render() {
 	            return _react2["default"].createElement(
 	                "p",
-	                { className: "abscence-person" },
-	                _react2["default"].createElement(
-	                    "h2",
-	                    { className: "title is-2" },
-	                    this.props.name
-	                ),
-	                _react2["default"].createElement(
-	                    "p",
-	                    { className: "abscence-item abscence-item-current" },
-	                    "13.04.2016 - 15.05.2016 : Munich"
-	                ),
-	                _react2["default"].createElement(
-	                    "p",
-	                    { className: "abscence-item" },
-	                    "01.06.2016 - 15.06.2016 : Polen"
-	                ),
-	                _react2["default"].createElement(
-	                    "p",
-	                    { className: "abscence-item" },
-	                    "13.08.2016 - 31.08.2016 : Munich"
-	                )
+	                { className: "abscence-item" },
+	                this.props.from,
+	                " - ",
+	                this.props.to,
+	                " : ",
+	                this.props.location
 	            );
 	        }
 	    }]);
 
-	    return AbsencePersonComponent;
+	    return AbsenceItemComponent;
 	})(_react2["default"].Component);
 
-	AbsencePersonComponent.propTypes = {
-	    name: _react2["default"].PropTypes.string.isRequired,
-	    items: _react2["default"].PropTypes.arrayOf(_react2["default"].PropTypes.Object).isRequired
+	AbsenceItemComponent.propTypes = {
+	    id: _react2["default"].PropTypes.string.isRequired,
+	    from: _react2["default"].PropTypes.string.isRequired,
+	    to: _react2["default"].PropTypes.string.isRequired,
+	    location: _react2["default"].PropTypes.string.isRequired
 	};
 
-	exports["default"] = AbsencePersonComponent;
+	exports["default"] = AbsenceItemComponent;
+
+	/*
+	 <p className="abscence-item abscence-item-current">13.04.2016 - 15.05.2016 : Munich</p>
+	 */
 	module.exports = exports["default"];
 
 /***/ }
