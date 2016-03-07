@@ -1,7 +1,7 @@
 {
   "AbsenceService": {
     "file": "/data/absence",
-    "autSave": true,
+    "autoSave": true,
     "humanReadable": true
   }
 }

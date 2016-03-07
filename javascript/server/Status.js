@@ -12,16 +12,16 @@ function Status() {
         if(!available) {
             timer = setTimeout(function() { available = true; }, timeout);
         }
-    }
+    };
 
     this.changeStatus = function (req, res) {
         available = !available;
         startReset();
         res.setHeader('Content-Type', 'application/json');
         res.send(JSON.stringify({ available: available }));
-    }
+    };
 
-    this.render = function (req, res) {
+    this.getStatus = function (req, res) {
         res.setHeader('Content-Type', 'application/json');
         res.send(JSON.stringify({ available: available }));
     };

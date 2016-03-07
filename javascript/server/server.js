@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
 const compression = require('compression');
 const winston = require('winston');
 const Config = require('./config.json');
@@ -7,8 +8,9 @@ const Status = require('./Status');
 const AbsenceService = require('./AbsenceService');
 const Absence = require('./Absence');
 
-// enable compression
+// enable compression & json parsing
 app.use(compression());
+app.use(bodyParser.json());
 
 // static routes
 app.use(express.static('public'));
@@ -17,7 +19,7 @@ app.use(express.static('public'));
 // status
 const CurrentStatus = new Status();
 app.get('/services/V1/status', function (req, res) {
-    CurrentStatus.render(req, res);
+    CurrentStatus.getStatus(req, res);
 });
 
 app.post('/services/V1/status', function (req, res) {
@@ -25,9 +27,17 @@ app.post('/services/V1/status', function (req, res) {
 });
 
 // absence
-const absenceService = new AbsenceService(Config.AbsenceService);
+const absence = new Absence(new AbsenceService(Config.AbsenceService));
 app.get('/services/V1/absence', function (req, res) {
-    (new Absence(absenceService)).render(req, res);
+    absence.getAbsences(req, res);
+});
+
+app.post('/services/V1/absence/:person', function (req, res) {
+    absence.addAbsence(req, res);
+});
+
+app.delete('/services/V1/absence/:person/:item', function (req, res) {
+    absence.deleteAbsence(req, res);
 });
 
 app.listen(3000);
