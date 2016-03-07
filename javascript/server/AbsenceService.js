@@ -1,8 +1,11 @@
 const winston = require('winston');
 const JsonDB = require('node-json-db');
+const AbsenceServiceDeorator = require('./AbsenceServiceDecorator');
 
 function AbsenceService(config) {
-    var db = new JsonDB(__dirname + config.file, config.autoSave, config.humanReadable);
+    const db = new JsonDB(__dirname + config.file, config.autoSave, config.humanReadable);
+    const decorator = new AbsenceServiceDeorator();
+
 
     this.getAbsences = function() {
         try {
@@ -11,7 +14,7 @@ function AbsenceService(config) {
             winston.error('Webserver is running on port 3000');
         }
 
-        return data;
+        return decorator.fromDb(data);
     };
 
 
