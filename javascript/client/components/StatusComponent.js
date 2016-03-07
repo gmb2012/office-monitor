@@ -27,8 +27,10 @@ class StatusComponent extends WebserviceComponent {
 
     render() {
         return (
-            <div className={classNames({ 'status': true, 'dnd': !this.state.available, 'available': this.state.available })} onClick={this.handleClick.bind(this)}>
-                <h1 className='title status-title'>{this.state.available ? this.props.textAvailable : this.props.textDnd}</h1>
+            <div className='column'>
+                <div className={classNames({ 'status': true, 'dnd': !this.state.available, 'available': this.state.available })} onClick={this.handleClick.bind(this)}>
+                    <h1 className='title status-title'>{this.state.available ? this.props.textAvailable : this.props.textDnd}</h1>
+                </div>
             </div>
         );
     }

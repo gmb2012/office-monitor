@@ -14,7 +14,7 @@ class AbsenceComponent extends WebserviceComponent {
 
     render() {
         return (
-            <div>
+            <div className="column">
                 <h1 className="title is-1">{this.props.title}</h1>
                 {this.state.data.map((item, index) => <AbsencePersonComponent {...item} key={index} />)}
             </div>
