@@ -31,6 +31,7 @@
     "compression": "^1.6.1",
     "express": "^4.13.4",
     "json-loader": "^0.5.2",
+    "node-json-db": "^0.6.3",
     "react": "^0.13.3",
     "superagent": "^1.8.0-beta.2",
     "winston": "^1.1.2"

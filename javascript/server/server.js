@@ -4,8 +4,8 @@ const compression = require('compression');
 const winston = require('winston');
 const Config = require('./config.json');
 const Status = require('./Status');
-const Absence = require('./Absence');
 const AbsenceService = require('./AbsenceService');
+const Absence = require('./Absence');
 
 // enable compression
 app.use(compression());
@@ -25,10 +25,9 @@ app.post('/services/V1/status', function (req, res) {
 });
 
 // absence
-const AbsenceServiceInstance = new AbsenceService(Config.AbsenceService);
-AbsenceServiceInstance.connect();
+const absenceService = new AbsenceService(Config.AbsenceService);
 app.get('/services/V1/absence', function (req, res) {
-    (new Absence(AbsenceServiceInstance)).render(req, res);
+    (new Absence(absenceService)).render(req, res);
 });
 
 app.listen(3000);

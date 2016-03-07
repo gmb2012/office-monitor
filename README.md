@@ -1,5 +1,5 @@
 # ToDo
-Service for retrieving
+New format incl. uuids
 Order absences by from
 Adding absences in the frontend => +
 Service for retrieving absences

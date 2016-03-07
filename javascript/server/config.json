@@ -1,13 +1,7 @@
 {
   "AbsenceService": {
-    "databaseName": "office-monitor",
-    "server": {
-      "host": "localhost",
-      "port": 2424
-    },
-    "database": {
-      "user_name": "admin",
-      "user_password": "admin"
-    }
+    "file": "/data/absence",
+    "autSave": true,
+    "humanReadable": true
   }
 }

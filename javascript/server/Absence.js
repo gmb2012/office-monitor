@@ -1,15 +1,9 @@
-const winston = require('winston');
+const JsonDB = require('node-json-db');
 
-
-function Absence() {
-    getAbsences = function() {
-
-    };
-
-
+function Absence(AbsenceService) {
     this.render = function (req, res) {
         res.setHeader('Content-Type', 'application/json');
-        res.send(JSON.stringify({ }));
+        res.send(JSON.stringify(AbsenceService.getAbsences()));
     };
 }
 

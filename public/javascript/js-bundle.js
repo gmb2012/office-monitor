@@ -20456,7 +20456,7 @@
 			"textAvailable": "Come In"
 		},
 		"AbsenceComponent": {
-			"serviceURL": "/services/V1/status",
+			"serviceURL": "/services/V1/absence",
 			"refreshInterval": 10000,
 			"title": "Upcoming absences"
 		}
@@ -22237,28 +22237,32 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _WebserviceComponent2 = __webpack_require__(160);
+
+	var _WebserviceComponent3 = _interopRequireDefault(_WebserviceComponent2);
+
 	var _AbsencePersonComponent = __webpack_require__(170);
 
 	var _AbsencePersonComponent2 = _interopRequireDefault(_AbsencePersonComponent);
 
-	var AbsenceComponent = (function (_React$Component) {
-	    _inherits(AbsenceComponent, _React$Component);
+	var AbsenceComponent = (function (_WebserviceComponent) {
+	    _inherits(AbsenceComponent, _WebserviceComponent);
 
-	    function AbsenceComponent() {
+	    function AbsenceComponent(props) {
 	        _classCallCheck(this, AbsenceComponent);
 
-	        _get(Object.getPrototypeOf(AbsenceComponent.prototype), 'constructor', this).apply(this, arguments);
+	        _get(Object.getPrototypeOf(AbsenceComponent.prototype), 'constructor', this).call(this, props);
+	        this.state = { data: [] };
 	    }
 
 	    _createClass(AbsenceComponent, [{
+	        key: 'responseBodyToState',
+	        value: function responseBodyToState(resBody) {
+	            return { data: resBody };
+	        }
+	    }, {
 	        key: 'render',
 	        value: function render() {
-	            var data = [{
-	                'id': 'f469aec9-3764-4917-b48f-113a82ff42f2',
-	                'name': 'Björn',
-	                'items': [{ 'id': 'f630e9b2-4408-4b50-9584-6e11cba7fed3', 'from': '2016-03-06', 'to': '2016-03-22', 'location': 'Munich' }, { 'id': 'e7a5c753-4b72-4704-94db-cba22395d0b8', 'from': '2016-06-01', 'to': '2016-06-15', 'location': 'Poznan' }, { 'id': '57622cfb-8850-4e65-a0cd-699aaf2e48c1', 'from': '2016-08-13', 'to': '2016-08-31', 'location': 'Munich' }]
-	            }, { 'id': '26bb0093-218a-4b06-a117-62006139e91a', 'name': 'Flo', 'items': [] }];
-
 	            return _react2['default'].createElement(
 	                'div',
 	                null,
@@ -22267,7 +22271,7 @@
 	                    { className: 'title is-1' },
 	                    this.props.title
 	                ),
-	                data.map(function (item, index) {
+	                this.state.data.map(function (item, index) {
 	                    return _react2['default'].createElement(_AbsencePersonComponent2['default'], _extends({}, item, { key: index }));
 	                })
 	            );
@@ -22275,7 +22279,7 @@
 	    }]);
 
 	    return AbsenceComponent;
-	})(_react2['default'].Component);
+	})(_WebserviceComponent3['default']);
 
 	AbsenceComponent.propTypes = {
 	    title: _react2['default'].PropTypes.string.isRequired
@@ -22336,7 +22340,7 @@
 	            }
 
 	            return _react2['default'].createElement(
-	                'p',
+	                'div',
 	                { className: 'abscence-person' },
 	                _react2['default'].createElement(
 	                    'h2',
@@ -22414,8 +22418,6 @@
 	    }, {
 	        key: 'render',
 	        value: function render() {
-	            ;
-
 	            return _react2['default'].createElement(
 	                'p',
 	                { className: (0, _classnames2['default'])({ 'abscence-item': true, 'abscence-item-current': this.isCurrent(this.props.from, this.props.to) }) },

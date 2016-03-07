@@ -9,11 +9,11 @@ class AbsencePersonComponent extends React.Component {
         }
 
         return (
-            <p className="abscence-person">
+            <div className="abscence-person">
                 <h2 className="title is-2">{this.props.name}</h2>
                 {this.props.items.map((item, index) => <AbsenceItemComponent {...item} key={index} />)}
                 {empty}
-            </p>
+            </div>
         );
     }
 }

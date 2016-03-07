@@ -6,7 +6,7 @@
     "textAvailable": "Come In"
   },
   "AbsenceComponent": {
-    "serviceURL": "/services/V1/status",
+    "serviceURL": "/services/V1/absence",
     "refreshInterval": 10000,
     "title": "Upcoming absences"
   }
