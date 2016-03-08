@@ -16,7 +16,7 @@ class AbsenceItemAddComponent extends React.Component {
                     <label className='label'>Location</label>
                     <input className='input' type='text' id='absence-item-add-location' placeholder='Munich' />
                 </p>
-                <p class='control'>
+                <p className='control'>
                     <button className='button is-primary'>Save</button>
                     <button className='button'>Cancel</button>
                 </p>

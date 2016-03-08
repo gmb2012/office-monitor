@@ -9,7 +9,7 @@ function AbsenceServiceDecorator() {
             "name": absencePerson.name,
             "items": Object.keys(absencePerson.items)
                 .map((function(key) { return this.itemFromDB(key, absencePerson.items[key]); }).bind(this))
-                .sort(function(a, b) { return Date.parse(a.from) - Date.parse(b.from); })
+                .sort(function(a, b) { return a.from - b.from; })
         };
     };
 
