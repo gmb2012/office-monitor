@@ -1,5 +1,6 @@
 import React from 'react';
 import AbsenceItemComponent from './AbsenceItemComponent';
+import AbsenceItemAddComponent from './AbsenceItemAddComponent';
 
 class AbsencePersonComponent extends React.Component {
     render() {
@@ -14,6 +15,7 @@ class AbsencePersonComponent extends React.Component {
                     {this.props.name}
                     <i className='fa fa-calendar-plus-o absence-icon absence-person-icon' />
                 </h2>
+                <AbsenceItemAddComponent />
                 {this.props.items.map((item, index) => <AbsenceItemComponent {...item} key={index} />)}
                 {empty}
             </div>
