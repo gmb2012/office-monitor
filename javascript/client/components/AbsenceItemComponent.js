@@ -16,6 +16,7 @@ class AbsenceItemComponent extends React.Component {
         return (
             <p className={classNames({ 'abscence-item': true, 'abscence-item-current': this.isCurrent(this.props.from, this.props.to) })}>
                 {this.props.from} - {this.props.to} : {this.props.location}
+                <i className='fa fa-calendar-minus-o absence-icon absence-item-icon' />
             </p>
         );
     }
