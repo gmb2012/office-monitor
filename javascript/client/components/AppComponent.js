@@ -1,12 +1,12 @@
 import React from 'react';
-import StatusComponent from './StatusComponent';
+import StatusContainer from '../containers/StatusContainer';
 import AbsenceComponent from './AbsenceComponent';
 
 class AppComponent extends React.Component {
     render() {
         return (
             <div className="columns">
-                <StatusComponent {...this.props.config.StatusComponent} />
+                <StatusContainer {...this.props.config.StatusComponent} />
                 <AbsenceComponent {...this.props.config.AbsenceComponent} />
             </div>
         );

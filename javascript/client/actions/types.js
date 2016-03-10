@@ -1,0 +1,1 @@
+export const GET_AVAILABILITY = 'GET_AVAILABILITY';
