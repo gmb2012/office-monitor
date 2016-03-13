@@ -22,6 +22,10 @@ class Webservice {
     post(url, dispatch, actionType) {
         return this.sendRequest(Superagent.post(url), dispatch, actionType);
     }
+
+    delete(url, dispatch, actionType) {
+        return this.sendRequest(Superagent.delete(url), dispatch, actionType);
+    }
 }
 
 export default Webservice;

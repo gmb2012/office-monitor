@@ -25,11 +25,17 @@ class AbsenceItemComponent extends React.Component {
         return returnValue;
     }
 
+    handleClick(id) {
+        if(window.confirm("Are you sure?")) {
+            this.props.deleteAbsence(this.props.serviceURL + '/' + this.props.personId + '/' + this.props.id);
+        }
+    }
+
     render() {
         return (
             <p className={classNames({ 'abscence-item': true, 'abscence-item-current': this.isCurrent(this.props.from, this.props.to) })}>
                 {this.formatTimestamp(this.props.from)} - {this.formatTimestamp(this.props.to)} : {this.props.location}
-                <i className='fa fa-calendar-minus-o absence-icon absence-item-icon' />
+                <i className='fa fa-calendar-minus-o absence-icon absence-item-icon' onClick={this.handleClick.bind(this)} />
             </p>
         );
     }
@@ -39,7 +45,10 @@ AbsenceItemComponent.propTypes = {
     id: PropTypes.string.isRequired,
     from: PropTypes.number.isRequired,
     to: PropTypes.number.isRequired,
-    location: PropTypes.string.isRequired
+    location: PropTypes.string.isRequired,
+    personId: PropTypes.string.isRequired,
+    serviceURL: PropTypes.string.isRequired,
+    deleteAbsence: PropTypes.func.isRequired
 };
 
 export default AbsenceItemComponent;

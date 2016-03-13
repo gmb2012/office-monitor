@@ -1,13 +1,29 @@
 {
-  "f469aec9-3764-4917-b48f-113a82ff42f2": {
-    "name": "Björn",
-    "items": {
-      "f630e9b2-4408-4b50-9584-6e11cba7fed3": {"from": 1457222400, "to": 1458604800, "location": "Munich"},
-      "e7a5c753-4b72-4704-94db-cba22395d0b8": {"from": 1464739200, "to": 1465948800, "location": "Poznan"},
-      "57622cfb-8850-4e65-a0cd-699aaf2e48c1": {"from": 1471046400, "to": 1472601600, "location": "Munich"},
-      "7ec05291-fdd6-47fb-90d7-df003c3bdc88": {"from": 1459641600, "to": 1462060800, "location": "Munich"},
-      "c76fe63a-6778-4181-ba9a-343838a239e1": {"from": 1455926400, "to": 1456272000, "location": "Outdated"}
+    "f469aec9-3764-4917-b48f-113a82ff42f2": {
+        "name": "Björn",
+        "items": {
+            "f630e9b2-4408-4b50-9584-6e11cba7fed3": {
+                "from": 1457222400,
+                "to": 1458604800,
+                "location": "Munich",
+                "id": "f630e9b2-4408-4b50-9584-6e11cba7fed3"
+            },
+            "e7a5c753-4b72-4704-94db-cba22395d0b8": {
+                "from": 1464739200,
+                "to": 1465948800,
+                "location": "Poznan",
+                "id": "e7a5c753-4b72-4704-94db-cba22395d0b8"
+            },
+            "c76fe63a-6778-4181-ba9a-343838a239e1": {
+                "from": 1455926400,
+                "to": 1456272000,
+                "location": "Outdated",
+                "id": "c76fe63a-6778-4181-ba9a-343838a239e1"
+            }
+        }
+    },
+    "26bb0093-218a-4b06-a117-62006139e91a": {
+        "name": "Flo",
+        "items": {}
     }
-  },
-  "26bb0093-218a-4b06-a117-62006139e91a": {"name": "Flo", "items": {}}
 }

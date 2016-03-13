@@ -22,7 +22,7 @@ class AbsenceItemAddComponent extends React.Component {
                     <input className='input' type='text' id='absence-item-add-location' defaultValue='Munich' />
                 </p>
                 <p className='control'>
-                    <input className='input' type='hidden' id='absence-item-add-id' readOnly="readonly" value={this.props.id} />
+                    <input className='input' type='hidden' id='absence-item-add-id' readOnly="readonly" value={this.props.personId} />
                     <button className='button is-primary'>Save</button>
                 </p>
             </div>
@@ -32,7 +32,7 @@ class AbsenceItemAddComponent extends React.Component {
 
 AbsenceItemAddComponent.propTypes = {
     display: PropTypes.bool.isRequired,
-    id: PropTypes.string.isRequired,
+    personId: PropTypes.string.isRequired,
 };
 
 export default AbsenceItemAddComponent;
