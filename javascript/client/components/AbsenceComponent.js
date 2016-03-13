@@ -11,7 +11,12 @@ class AbsenceComponent extends React.Component {
             <div className="column">
                 <h1 className="title is-1">{this.props.title}</h1>
                 {this.props.persons.map((item, index) =>
-                    <AbsencePersonComponent {...item} serviceURL={this.props.serviceURL} deleteAbsence={this.props.deleteAbsence} key={index} />)}
+                    <AbsencePersonComponent
+                        {...item}
+                        serviceURL={this.props.serviceURL}
+                        deleteAbsence={this.props.deleteAbsence}
+                        addAbsence={this.props.addAbsence}
+                        key={index} />)}
             </div>
         );
     }
@@ -24,6 +29,7 @@ AbsenceComponent.propTypes = {
     serviceURL: PropTypes.string.isRequired,
     getAbsenceInterval: PropTypes.func.isRequired,
     getAbsence: PropTypes.func.isRequired,
+    addAbsence: PropTypes.func.isRequired,
     deleteAbsence: PropTypes.func.isRequired
 };
 

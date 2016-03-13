@@ -24,7 +24,7 @@ class AbsencePersonComponent extends React.Component {
                     {this.props.name}
                     <i className='fa fa-calendar-plus-o absence-icon absence-person-icon' onClick={this.handleClick.bind(this)} />
                 </h2>
-                <AbsenceItemAddComponent display={this.state.showAddItem} personId={this.props.id} />
+                <AbsenceItemAddComponent display={this.state.showAddItem} serviceURL={this.props.serviceURL} addAbsence={this.props.addAbsence} personId={this.props.id} />
                 {this.props.items.map((item, index) =>
                     <AbsenceItemComponent {...item} key={index} personId={this.props.id} serviceURL={this.props.serviceURL} deleteAbsence={this.props.deleteAbsence} />)}
                 {empty}
@@ -38,6 +38,7 @@ AbsencePersonComponent.propTypes = {
     id: PropTypes.string.isRequired,
     items: PropTypes.array.isRequired,
     serviceURL: PropTypes.string.isRequired,
+    addAbsence: PropTypes.func.isRequired,
     deleteAbsence: PropTypes.func.isRequired
 };
 

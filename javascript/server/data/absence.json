@@ -19,6 +19,17 @@
                 "to": 1456272000,
                 "location": "Outdated",
                 "id": "c76fe63a-6778-4181-ba9a-343838a239e1"
+            },
+            "ec2c31d6-b384-4a84-b830-ddf18d8c5f23": {
+                "from": 1459900800,
+                "to": 1460073600,
+                "location": "Munich",
+                "id": "ec2c31d6-b384-4a84-b830-ddf18d8c5f23"
+            },
+            "e13e5992-a78c-44ce-a7f4-f692189c4f64": {
+                "from": 1461801600,
+                "to": 1461974400,
+                "location": "Munich"
             }
         }
     },

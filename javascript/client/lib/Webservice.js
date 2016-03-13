@@ -19,8 +19,8 @@ class Webservice {
         return this.sendRequest(Superagent.get(url), dispatch, actionType);
     }
 
-    post(url, dispatch, actionType) {
-        return this.sendRequest(Superagent.post(url), dispatch, actionType);
+    post(url, dispatch, actionType, params = {}) {
+        return this.sendRequest(Superagent.post(url).send(params), dispatch, actionType);
     }
 
     delete(url, dispatch, actionType) {

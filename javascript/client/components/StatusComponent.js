@@ -2,7 +2,6 @@ import React, { PropTypes } from 'react';
 import classNames from 'classnames';
 
 class StatusComponent extends React.Component {
-
     handleClick() {
         this.props.setAvailable(this.props.serviceURL);
     }

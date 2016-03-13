@@ -41,6 +41,12 @@ export const getAbsence = (serviceURL) => {
     }
 };
 
+export const addAbsence = (serviceURL, absence) => {
+    return function(dispatch) {
+        webservice.post(serviceURL, dispatch, GET_ABSENCE, absence);
+    }
+};
+
 export const deleteAbsence = (serviceURL) => {
     return function(dispatch) {
         webservice.delete(serviceURL, dispatch, GET_ABSENCE);
