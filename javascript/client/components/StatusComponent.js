@@ -23,12 +23,14 @@ class StatusComponent extends React.Component {
 }
 
 StatusComponent.propTypes = {
+    available: PropTypes.bool.isRequired,
     refreshInterval: PropTypes.number.isRequired,
     serviceURL: PropTypes.string.isRequired,
     textDnd: PropTypes.string.isRequired,
     textAvailable: PropTypes.string.isRequired,
+    getAvailableInterval: PropTypes.func.isRequired,
     getAvailable: PropTypes.func.isRequired,
-    setAvailable: PropTypes.func.isRequired,
+    setAvailable: PropTypes.func.isRequired
 };
 
 export default StatusComponent;

@@ -1,1 +1,2 @@
 export const GET_AVAILABILITY = 'GET_AVAILABILITY';
+export const GET_ABSENCE = 'GET_ABSENCE';
