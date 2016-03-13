@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import classNames from 'classnames';
 
 class AbsenceItemAddComponent extends React.Component {
     inputToday() {
@@ -7,7 +8,7 @@ class AbsenceItemAddComponent extends React.Component {
 
     render() {
         return (
-            <div className='box absence-item-add'>
+            <div className={classNames({ 'box': true, 'absence-item-add': true, 'hidden': !this.props.display })}>
                 <p className='control'>
                     <label className='label'>From</label>
                     <input className='input' type='date' id='absence-item-add-from' min={this.inputToday()} defaultValue={this.inputToday()} />
@@ -21,12 +22,17 @@ class AbsenceItemAddComponent extends React.Component {
                     <input className='input' type='text' id='absence-item-add-location' defaultValue='Munich' />
                 </p>
                 <p className='control'>
+                    <input className='input' type='hidden' id='absence-item-add-id' readOnly="readonly" value={this.props.id} />
                     <button className='button is-primary'>Save</button>
-                    <button className='button'>Cancel</button>
                 </p>
             </div>
         );
     }
 }
+
+AbsenceItemAddComponent.propTypes = {
+    display: PropTypes.bool.isRequired,
+    id: PropTypes.string.isRequired,
+};
 
 export default AbsenceItemAddComponent;

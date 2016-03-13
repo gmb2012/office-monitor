@@ -3,6 +3,15 @@ import AbsenceItemComponent from './AbsenceItemComponent';
 import AbsenceItemAddComponent from './AbsenceItemAddComponent';
 
 class AbsencePersonComponent extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { showAddItem: false };
+    }
+
+    handleClick() {
+        this.setState( { showAddItem: !this.state.showAddItem });
+    }
+
     render() {
         let empty = '';
         if(this.props.items.length == 0) {
@@ -13,9 +22,9 @@ class AbsencePersonComponent extends React.Component {
             <div className="abscence-person">
                 <h2 className="title is-2">
                     {this.props.name}
-                    <i className='fa fa-calendar-plus-o absence-icon absence-person-icon' />
+                    <i className='fa fa-calendar-plus-o absence-icon absence-person-icon' onClick={this.handleClick.bind(this)} />
                 </h2>
-                <AbsenceItemAddComponent />
+                <AbsenceItemAddComponent display={this.state.showAddItem} id={this.props.id} />
                 {this.props.items.map((item, index) => <AbsenceItemComponent {...item} key={index} />)}
                 {empty}
             </div>

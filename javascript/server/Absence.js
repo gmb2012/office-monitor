@@ -2,13 +2,13 @@ function Absence(AbsenceService) {
     this.addAbsence = function(req, res) {
         AbsenceService.addAbsenceItem(req.params.person, req.body);
         res.setHeader('Content-Type', 'application/json');
-        res.send(JSON.stringify({ 'message': 'ok' }));
+        res.send(JSON.stringify(AbsenceService.getAbsences()));
     };
 
     this.deleteAbsence = function(req, res) {
         AbsenceService.deleteAbsenceItem(req.params.person, req.params.item);
         res.setHeader('Content-Type', 'application/json');
-        res.send(JSON.stringify({ 'message': 'ok' }));
+        res.send(JSON.stringify(AbsenceService.getAbsences()));
     };
 
     this.getAbsences = function (req, res) {
