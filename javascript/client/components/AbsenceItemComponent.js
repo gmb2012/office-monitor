@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import classNames from 'classnames';
 
 class AbsenceItemComponent extends React.Component {
@@ -36,10 +36,10 @@ class AbsenceItemComponent extends React.Component {
 }
 
 AbsenceItemComponent.propTypes = {
-    id: React.PropTypes.string.isRequired,
-    from: React.PropTypes.number.isRequired,
-    to: React.PropTypes.number.isRequired,
-    location: React.PropTypes.string.isRequired
+    id: PropTypes.string.isRequired,
+    from: PropTypes.number.isRequired,
+    to: PropTypes.number.isRequired,
+    location: PropTypes.string.isRequired
 };
 
 export default AbsenceItemComponent;

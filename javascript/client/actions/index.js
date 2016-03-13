@@ -1,5 +1,7 @@
 import { GET_AVAILABILITY } from './types';
-import Superagent from 'superagent';
+import Webservice from '../lib/Webservice';
+
+const webservice = new Webservice();
 
 export const getAvailableInterval = (interval, serviceURL) => {
     return function(dispatch) {
@@ -12,37 +14,12 @@ export const getAvailableInterval = (interval, serviceURL) => {
 
 export const getAvailable = (serviceURL) => {
     return function(dispatch) {
-        Superagent
-            .get(serviceURL)
-            .end(function (err, res) {
-                if (res && res.ok) {
-                    dispatch({
-                        type: GET_AVAILABILITY,
-                        body: res.body
-                    });
-                } else {
-                    LogError.error('Webservice error in class "' + this.constructor.name + '": ' + err);
-                }
-            });
+        webservice.get(serviceURL, dispatch, GET_AVAILABILITY);
     }
 };
 
-
 export const setAvailable = (serviceURL) => {
-    console.log("setAva");
-
     return function(dispatch) {
-        Superagent
-            .post(serviceURL)
-            .end(function (err, res) {
-                if (res && res.ok) {
-                    dispatch({
-                        type: GET_AVAILABILITY,
-                        body: res.body
-                    });
-                } else {
-                    LogError.error('Webservice error in class "' + this.constructor.name + '": ' + err);
-                }
-            });
+        webservice.post(serviceURL, dispatch, GET_AVAILABILITY);
     }
 };

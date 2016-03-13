@@ -12,6 +12,13 @@ class StatusContainer extends React.Component {
     }
 }
 
+StatusContainer.propTypes = {
+    refreshInterval: PropTypes.number.isRequired,
+    serviceURL: PropTypes.string.isRequired,
+    textDnd: PropTypes.string.isRequired,
+    textAvailable: PropTypes.string.isRequired
+};
+
 const mapStateToProps = (state) => {
     return {
         available: state.status

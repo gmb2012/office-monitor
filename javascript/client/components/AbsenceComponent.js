@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import WebserviceComponent from '../WebserviceComponent';
 import AbsencePersonComponent from './AbsencePersonComponent';
 
@@ -23,7 +23,7 @@ class AbsenceComponent extends WebserviceComponent {
 }
 
 AbsenceComponent.propTypes = {
-    title: React.PropTypes.string.isRequired
+    title: PropTypes.string.isRequired
 };
 
 export default AbsenceComponent;

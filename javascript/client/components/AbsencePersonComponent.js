@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import AbsenceItemComponent from './AbsenceItemComponent';
 import AbsenceItemAddComponent from './AbsenceItemAddComponent';
 
@@ -24,9 +24,9 @@ class AbsencePersonComponent extends React.Component {
 }
 
 AbsencePersonComponent.propTypes = {
-    name: React.PropTypes.string.isRequired,
-    id: React.PropTypes.string.isRequired,
-    items: React.PropTypes.array.isRequired
+    name: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    items: PropTypes.array.isRequired
 };
 
 export default AbsencePersonComponent;

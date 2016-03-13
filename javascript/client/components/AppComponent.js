@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import StatusContainer from '../containers/StatusContainer';
 import AbsenceComponent from './AbsenceComponent';
 
@@ -14,7 +14,7 @@ class AppComponent extends React.Component {
 }
 
 AppComponent.propTypes = {
-    config: React.PropTypes.object.isRequired
+    config: PropTypes.object.isRequired
 };
 
 export default AppComponent;

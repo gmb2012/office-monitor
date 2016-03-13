@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import classNames from 'classnames';
-import Superagent from 'superagent';
 
 class StatusComponent extends React.Component {
 
@@ -9,7 +8,7 @@ class StatusComponent extends React.Component {
     }
 
     componentDidMount() {
-        this.props.getAvailableInterval(1000, this.props.serviceURL);
+        this.props.getAvailableInterval(this.props.refreshInterval, this.props.serviceURL);
     }
 
     render() {
@@ -24,10 +23,12 @@ class StatusComponent extends React.Component {
 }
 
 StatusComponent.propTypes = {
-    textDnd: React.PropTypes.string.isRequired,
-    textAvailable: React.PropTypes.string.isRequired,
-    getAvailable: React.PropTypes.func.isRequired,
-    setAvailable: React.PropTypes.func.isRequired,
+    refreshInterval: PropTypes.number.isRequired,
+    serviceURL: PropTypes.string.isRequired,
+    textDnd: PropTypes.string.isRequired,
+    textAvailable: PropTypes.string.isRequired,
+    getAvailable: PropTypes.func.isRequired,
+    setAvailable: PropTypes.func.isRequired,
 };
 
 export default StatusComponent;
