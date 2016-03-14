@@ -9,7 +9,7 @@ function AbsenceServiceDecorator() {
             "name": absencePerson.name,
             "items": Object.keys(absencePerson.items)
                 .map((function(key) { return this.itemFromDB(key, absencePerson.items[key]); }).bind(this))
-                .filter(function(item) { return item.to * 1000 >= Date.now(); })
+                .filter(function(item) { return item.to * 1000 >=  (Date.now() - 86400000); }) // show current day and yesterday
                 .sort(function(a, b) { return a.from - b.from; })
         };
     };
