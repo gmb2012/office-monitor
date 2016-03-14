@@ -3,38 +3,28 @@
         "name": "Björn",
         "items": {
             "f630e9b2-4408-4b50-9584-6e11cba7fed3": {
-                "from": 1457222400,
-                "to": 1458604800,
-                "location": "Munich",
+                "from": 1458000000,
+                "to": 1458259200,
+                "location": "Poznan",
                 "id": "f630e9b2-4408-4b50-9584-6e11cba7fed3"
             },
             "e7a5c753-4b72-4704-94db-cba22395d0b8": {
-                "from": 1464739200,
-                "to": 1465948800,
-                "location": "Poznan",
+                "from": 1458691200,
+                "to": 1458777600,
+                "location": "Munich - Presentation Training",
                 "id": "e7a5c753-4b72-4704-94db-cba22395d0b8"
             },
-            "c76fe63a-6778-4181-ba9a-343838a239e1": {
-                "from": 1455926400,
-                "to": 1456272000,
-                "location": "Outdated",
-                "id": "c76fe63a-6778-4181-ba9a-343838a239e1"
-            },
             "ec2c31d6-b384-4a84-b830-ddf18d8c5f23": {
-                "from": 1459900800,
-                "to": 1460073600,
-                "location": "Munich",
+                "from": 1462752000,
+                "to": 1462924800,
+                "location": "Munich - Management 3.0 Training",
                 "id": "ec2c31d6-b384-4a84-b830-ddf18d8c5f23"
             },
             "e13e5992-a78c-44ce-a7f4-f692189c4f64": {
-                "from": 1461801600,
-                "to": 1461974400,
-                "location": "Munich"
+                "from": 1474848000,
+                "to": 1474934400,
+                "location": "Munich - PSPO Training"
             }
         }
-    },
-    "26bb0093-218a-4b06-a117-62006139e91a": {
-        "name": "Flo",
-        "items": {}
     }
 }

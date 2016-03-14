@@ -3,6 +3,10 @@ var path = require('path'),
     webpack = require('webpack'),
     config;
 
+var env = {
+    NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development')
+};
+
 config = {
     resolve: {
         extensions: [ '', '.js', '.jsx' ]
@@ -25,10 +29,10 @@ config = {
             },
             { test: /\.json$/, loader: 'json-loader' }
         ]
-    }/*,
+    },
     plugins: [
-        new webpack.optimize.UglifyJsPlugin({ minimize: true })
-    ]*/
+       new webpack.DefinePlugin({'process.env': env})
+    ]
 };
 
 module.exports = config;
