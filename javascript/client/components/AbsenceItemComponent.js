@@ -18,7 +18,7 @@ class AbsenceItemComponent extends React.Component {
     isCurrent(from, to) {
         let returnValue = false;
 
-        if(Date.now() >= from * 1000 && Date.now() <= to * 1000) {
+        if(Date.now() >= from * 1000 && Date.now() <= (to * 1000) + 86399999) {
             returnValue = true;
         }
 

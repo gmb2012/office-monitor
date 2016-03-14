@@ -1,6 +1,3 @@
-# ToDo
-Make it run on the raspberry
-
-## Improvment
+## Improvments
 - Configs into actions
 - Less code for actions
