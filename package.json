@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Office Monitor",
   "scripts": {
-    "start": "NODE_ENV=production webpack -p & node ./javascript/server/server.js",
+    "start": "NODE_ENV=production webpack -p --debug --progress & nohup node ./javascript/server/server.js &",
     "dev": "npm run dev:server & npm run dev:client",
     "dev:client": "webpack --watch",
     "dev:server": "nodemon --debug ./javascript/server/server.js"
