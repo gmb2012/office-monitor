@@ -23,7 +23,7 @@
 }
 
 .abscence-item {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 300;
 }
 
@@ -47,11 +47,11 @@
 .absence-icon {
     margin-left: 1em;
     cursor: pointer;
-    visibility: hidden;
+    display: none;
 }
 
 *:hover > .absence-icon {
-    visibility: visible;
+    display: inline;
 }
 
 .absence-person-icon {
