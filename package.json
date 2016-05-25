@@ -31,6 +31,7 @@
     "body-parser": "^1.15.0",
     "classnames": "^2.2.3",
     "compression": "^1.6.1",
+    "dateformat": "^1.0.12",
     "express": "^4.13.4",
     "json-loader": "^0.5.2",
     "node-json-db": "^0.6.3",

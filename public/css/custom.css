@@ -76,3 +76,15 @@
     display: none;
     visibility: hidden;
 }
+
+.clock {
+    position: absolute;
+    color: #69707a;
+    right: 0em;
+    bottom: 0.5em;
+    text-align: right;
+}
+
+.clock > span {
+    font-weight: 100;
+}
